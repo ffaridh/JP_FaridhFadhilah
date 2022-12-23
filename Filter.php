@@ -1,18 +1,20 @@
 <?Php 
 // file
-$File = "daftarrsjakarta.Json";
+$File = (array) "daftarrsjakarta.Json";
+$File = (array) "rujukancv19.Json";
 // get file
-$DataAPI = File_get_contents($File);
+$DataAPIA = File_get_contents($File1);
+$DataAPIB = File_get_contents($File2);
 // decode
-$Data = Json_decode($DataAPI, True);
+$Data = json_encode(array_merge(json_decode($DataAPIA, true),json_decode($DataAPIB, true)))
  ?>
 <!DOCTYPE Html>
 <Html>
 <Head>
-    <Title>Rumah Sakit Rujukan</Title>
+    <Title>Filtering Rumah Sakit Rujukan</Title>
 </Head>
 <Body>
-<H1>Rumah Sakit Rujukan</H1>
+<H1>Filtering Rumah Sakit Rujukan</H1>
 <Table Border="1" Style="Width: 100%">
     <Thead>
         <Tr>
@@ -31,7 +33,7 @@ $Data = Json_decode($DataAPI, True);
                 <Td><?= $Row["alamat_rumah_sakit"] ?></Td>
                 <Td><?= $Row["kelurahan"] ?></Td>
                 <Td><?= $Row["kecamatan"] ?></Td>
-                <Td><?= $Row["kab_administrasi"] ?></Td>
+                <Td><?= $Row["kkota_madya"] ?></Td>
             </Tr>
         <?Php Endforeach ?>
     </Tbody>

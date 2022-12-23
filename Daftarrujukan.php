@@ -1,7 +1,7 @@
 <?Php 
 // file
-$File = "daftarrsjakarta.Json";
-$File = "rujukancv19.Json";
+$File = (array) "daftarrsjakarta.Json";
+$File = (array) "rujukancv19.Json";
 // get file
 $DataAPIA = File_get_contents($File1);
 $DataAPIB = File_get_contents($File2);

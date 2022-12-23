@@ -1,12 +1,10 @@
 <?Php 
 // file
-$File = (array) "daftarrsjakarta.Json";
-$File = (array) "rujukancv19.Json";
+$File = "daftarrsjakarta.Json";
 // get file
-$DataAPIA = File_get_contents($File1);
-$DataAPIB = File_get_contents($File2);
+$DataAPI = File_get_contents($File);
 // decode
-$Data = json_encode(array_merge(json_decode($DataAPIA, true),json_decode($DataAPIB, true)))
+$Data = Json_decode($DataAPI, True);
  ?>
 <!DOCTYPE Html>
 <Html>
@@ -39,7 +37,7 @@ $Data = json_encode(array_merge(json_decode($DataAPIA, true),json_decode($DataAP
                 <Td><?= $Row["alamat_rumah_sakit"] ?></Td>
                 <Td><?= $Row["kelurahan"] ?></Td>
                 <Td><?= $Row["kecamatan"] ?></Td>
-                <Td><?= $Row["kota_madya"] ?></Td>
+                <Td><?= $Row["kab_administrasi"] ?></Td>
                 <Td><?= $Row["kode_pos"] ?></Td>
                 <Td><?= $Row["nomor_telepon"] ?></Td>
                 <Td><?= $Row["nomor_fax"] ?></Td>
